@@ -1,0 +1,5 @@
+{
+  "name": "UMC100.3 Configurator",
+  "description": "Professional selection tool for the ABB Universal Motor Controller UMC100.3, allowing users to configure base controllers, expansion modules, communication interfaces, and local operation panels with order codes.",
+  "requestFramePermissions": []
+}

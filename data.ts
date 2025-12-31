@@ -1,0 +1,141 @@
+
+import { Section } from './types';
+
+export const SECTIONS: Section[] = [
+  {
+    id: 'A',
+    title: 'SECCIÓN A: CONTROLADOR BASE UMC100.3',
+    question: 'Tensión de Alimentación (Obligatoria)',
+    isMultiple: false,
+    options: [
+      { id: 'A1', label: '24 V DC, Estándar', description: 'Universal Motor Controller, Tensión 24 V DC', orderCode: 'UMC100.3 DC (1SAJ530000R0100-70007007397)' },
+      { id: 'A2', label: '110-240 V AC/DC, Estándar', description: 'Universal Motor Controller, Tensión 110-240 V AC/DC', orderCode: 'UMC100.3 UC (1SAJ530000R1100-70007007395)' },
+      { id: 'A3', label: '110-240 V AC/DC, ATEX + Recubrimiento', description: 'UMC, Tensión 110-240 V AC/DC, ATEX + Conformal Coating', orderCode: 'UMC100.3 UC EX Coated (1SAJ530000R1210-NO EN QAD)' },
+    ],
+  },
+  {
+    id: 'B',
+    title: 'SECCIÓN B: MEDICIÓN DE ALTA CORRIENTE TC',
+    question: 'Corriente Nominal del Motor (Ie)',
+    isMultiple: false,
+    isOptional: true,
+    options: [
+      { id: 'B1', label: 'No se requiere (Ie ≤63 A)', description: '', orderCode: 'N/A' },
+      { id: 'B2', label: 'Rango 60...185 A AC', description: 'Transformador de Corriente Trifásico Lineal (CT) 60-185 A AC', orderCode: 'CT4L185R/4 (1SAJ929500R0185-70007001107)' },
+      { id: 'B3', label: 'Rango 180...310 A AC', description: 'Transformador de Corriente Trifásico Lineal (CT) 180-310 A AC', orderCode: 'CT4L310R/4 (1SAJ929500R0310-70007001109)' },
+      { id: 'B4', label: 'Rango 300...500 A AC', description: 'Transformador de Corriente Trifásico Lineal (CT) 300-500 A AC', orderCode: 'CT5L500R/4 (1SAJ929501R0500-7000700101K)' },
+      { id: 'B5', label: 'Rango 500...850 A AC', description: 'Transformador de Corriente Trifásico Lineal (CT) 500-850 A AC', orderCode: 'CT5L850R/4 (1SAJ929501R0850-NO EN QAD)' },
+    ],
+  },
+  {
+    id: 'C',
+    title: 'SECCIÓN C: MONITOREO DE VOLTAJE Y POTENCIA',
+    question: 'Tipo de Red y Medición de Voltaje',
+    isMultiple: false,
+    isOptional: true,
+    options: [
+      { id: 'C1', label: 'No se requiere medición de Voltaje/Potencia', description: '', orderCode: 'N/A' },
+      { id: 'C2', label: 'Redes Puestas a Tierra (Grounded Networks)', description: 'Módulo de Voltaje Trifásico (hasta 690 V AC) para redes puestas a tierra', orderCode: 'VI150-FBP.0 (1SAJ650000R0100-70007001370)' },
+      { id: 'C3', label: 'Todas las Redes (Grounded y Ungrounded Networks)', description: 'Módulo de Voltaje Trifásico (hasta 690 V AC) para todas las redes', orderCode: 'VI155-FBP.0 (1SAJ655000R0100-70007001373)' },
+    ],
+  },
+  {
+    id: 'D',
+    title: 'SECCIÓN D: EXPANSIÓN DE ENTRADAS/SALIDAS DIGITALES',
+    question: 'Expansión de I/O Digitales',
+    isMultiple: false,
+    isOptional: true,
+    options: [
+      { id: 'D1', label: 'No se requiere expansión digital', description: '', orderCode: 'N/A' },
+      { id: 'D2', label: 'Expansión con entradas 24 V DC', description: 'Módulo I/O (8 DI 24V DC, 4 DO relé, 1 AO)', orderCode: 'DX111-FBP.0 (1SAJ611000R0101-70007100300)' },
+      { id: 'D3', label: 'Expansión con entradas 110/230 V AC', description: 'Módulo I/O (8 DI 110/230V AC, 4 DO relé, 1 AO)', orderCode: 'DX122-FBP.0 (1SAJ622000R0101-70007001360)' },
+    ],
+  },
+  {
+    id: 'E',
+    title: 'SECCIÓN E: MEDICIÓN ANALÓGICA Y TEMPERATURA (SI ES CONSIDERADO RECORDAR SUMAR MAS CABLES EN SECCION K)',
+    question: 'Necesidad de Entradas de Temperatura/Analógicas',
+    isMultiple: false,
+    isOptional: true,
+    options: [
+      { id: 'E1', label: 'Medición de Temperatura y Analógicas Básica (3 entradas)', description: 'Módulo de Expansión Analógica/Temperatura (3 entradas: PT100, PT1000, KTY, 0-10 V, 0/4-20 mA)', orderCode: 'AI111.0 (1SAJ613000R0102-NO EN QAD)' },
+      { id: 'E2', label: 'Medición de Temperatura y Analógicas Extendida (6 entradas)', description: 'Requiere Dos Módulos de Expansión Analógica/Temperatura', orderCode: '2x AI111.0 (1SAJ613000R0102-NO EN QAD)' },
+    ],
+  },
+  {
+    id: 'F',
+    title: 'SECCIÓN F: COMUNICACIÓN INDUSTRIAL',
+    question: 'Protocolo de Red Requerido',
+    isMultiple: false,
+    isOptional: true,
+    options: [
+      { id: 'F1', label: 'No se requiere comunicación de red', description: '', orderCode: 'N/A' },
+      { id: 'F2', label: 'Fieldbus: PROFIBUS DP', description: 'Interfaz de Comunicación Profibus DP', orderCode: 'PDP32.0 (1SAJ242000R0001-70007001051)' },
+      { id: 'F3', label: 'Fieldbus: Modbus RTU', description: 'Interfaz de Comunicación Modbus RTU', orderCode: 'MRP31.0 (1SAJ251000R0001)' },
+      { id: 'F4', label: 'Fieldbus: DeviceNet', description: 'Interfaz de Comunicación DeviceNet', orderCode: 'DNP31.0 (1SAJ231000R0001)' },
+      { id: 'F5', label: 'Ethernet: Modbus TCP', description: 'Interfaz Ethernet Modbus TCP (Para 1 a 4 UMC)', orderCode: 'MTQ22-FBP.0 (1SAJ260000R0100)' },
+      { id: 'F6', label: 'Ethernet: Profinet IO', description: 'Interfaz Ethernet Profinet IO (Para 1 a 4 UMC)', orderCode: 'PNQ22-FBP.0 (1SAJ261000R0100)' },
+      { id: 'F7', label: 'Ethernet: EtherNet/IP™', description: 'Interfaz EtherNet/IP™ (Para 1 UMC)', orderCode: 'EIU32.0 (1SAJ262000R0100)' },
+    ],
+  },
+  {
+    id: 'G',
+    title: 'SECCIÓN G: PANEL DE OPERACIÓN',
+    question: 'Selección de Panel Local',
+    isMultiple: false,
+    isOptional: true,
+    options: [
+      { id: 'G1', label: 'Sin panel local', description: '', orderCode: 'N/A' },
+      { id: 'G2', label: 'UMC100-PAN', description: 'Panel de operación con pantalla gráfica retroiluminada', orderCode: 'UMC100-PAN (1SAJ590000R0103)' },
+    ],
+  },
+  {
+    id: 'I',
+    title: 'SECCIÓN I: CABLES DE CONEXIÓN (PARA MONTAJE EN PUERTA)',
+    question: 'Largo del Cable de Extensión',
+    isMultiple: false,
+    isOptional: true,
+    options: [
+      { id: 'I1', label: 'No se requiere cable (Montaje directo)', description: '', orderCode: 'N/A' },
+      { id: 'I2', label: 'Cable 0.7 m con kit de montaje', description: '0.7 m ext. cable with door mounting set', orderCode: 'UMCPAN-CAB.070 (1SAJ510003R0002)' },
+      { id: 'I3', label: 'Cable 1.5 m con kit de montaje', description: '1.5 m ext. cable with door mounting set', orderCode: 'UMCPAN-CAB.150 (1SAJ510004R0002)' },
+      { id: 'I4', label: 'Cable 3 m con kit de montaje', description: '3 m ext. cable with door mounting set', orderCode: 'UMCPAN-CAB.300 (1SAJ510002R0002)' },
+    ],
+  },
+  {
+    id: 'J',
+    title: 'SECCIÓN J: PROTECCIÓN ADICIONAL',
+    question: 'Cubierta de Protección (Cap)',
+    isMultiple: true,
+    isOptional: true,
+    options: [
+      { id: 'J1', label: 'Protección para Panel (IP54)', description: 'Protection cap for operating panel (silicone material)', orderCode: 'UMC100-PAN CAP (1SAJ510005R0001)' },
+    ],
+  },
+  {
+    id: 'K',
+    title: 'SECCIÓN K: ACCESORIOS Y REPUESTOS',
+    question: 'Cables de Interconexión y Bornes (Spare Parts)',
+    isMultiple: true,
+    isOptional: true,
+    options: [
+      { id: 'K1', label: 'Cable UMC100 - Módulo I/O (0.3m) UMC100.3 a VI150-FBP.0.', description: 'Connection cable UMC100 - I/O module, length 0.3 m', orderCode: 'UMCIO-CAB.030 (1SAJ691000R0001)' },
+      { id: 'K2', label: 'Cable Módulo I/O - Módulo I/O (0.3m) DX111-FBP.0 / DX122-FBP.0 a VI150-FBP.0.', description: 'Connection cable IO-module - IO-module, length 0.3 m', orderCode: 'IOIO-CAB.030 (1SAJ692000R0001)' },
+      { id: 'K3', label: 'Terminal set UMC100.3 DC', description: 'Terminal set for UMC100.3 DC (spare parts)', orderCode: 'UMCTB-FBP.0 (1SAJ929160R0001)' },
+      { id: 'K4', label: 'Terminal set UMC100.3 UC', description: 'Terminal set for UMC100.3 UC (spare parts)', orderCode: 'UMCTB.1 (1SAJ929160R0002)' },
+    ],
+  },
+  {
+    id: 'H',
+    title: 'SECCIÓN H: SEGURIDAD (SENSORES DE FUGA A TIERRA)',
+    question: 'Selección de Sensor de Fuga a Tierra (CEM11)',
+    isMultiple: true,
+    isOptional: true,
+    options: [
+      { id: 'H1', label: 'Sensor de Fuga a Tierra (20 mm)', description: 'Sensor de fuga a tierra, diámetro 20 mm', orderCode: 'CEM11-FBP.20 (1SAJ929200R0020)' },
+      { id: 'H2', label: 'Sensor de Fuga a Tierra (35 mm)', description: 'Sensor de fuga a tierra, diámetro 35 mm', orderCode: 'CEM11-FBP.35 (1SAJ929200R0035)' },
+      { id: 'H3', label: 'Sensor de Fuga a Tierra (60 mm)', description: 'Sensor de fuga a tierra, diámetro 60 mm', orderCode: 'CEM11-FBP.60 (1SAJ929200R0060)' },
+      { id: 'H4', label: 'Sensor de Fuga a Tierra (120 mm)', description: 'Sensor de fuga a tierra, diámetro 120 mm', orderCode: 'CEM11-FBP.120 (1SAJ929200R0120)' },
+    ],
+  },
+];
