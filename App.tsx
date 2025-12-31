@@ -1,7 +1,7 @@
 
 import React, { useState, useMemo } from 'react';
-import { SECTIONS } from './data';
-import { SelectionState, ComponentOption } from './types';
+import { SECTIONS } from './data.ts';
+import { SelectionState, ComponentOption } from './types.ts';
 import { 
   ClipboardDocumentListIcon, 
   CheckCircleIcon, 
@@ -21,7 +21,6 @@ const App: React.FC = () => {
       if (isMultiple) {
         const current = (prev[sectionId] as string[]) || [];
         if (current.includes(optionId)) {
-          // Si ya está seleccionado, quitarlo
           const nextSelections = { ...prev };
           const newList = current.filter(id => id !== optionId);
           if (newList.length === 0) {
@@ -31,11 +30,9 @@ const App: React.FC = () => {
           }
           return nextSelections;
         } else {
-          // Si no está, agregarlo
           return { ...prev, [sectionId]: [...current, optionId] };
         }
       } else {
-        // Lógica para selección única: permitir deseleccionar al hacer clic de nuevo
         if (prev[sectionId] === optionId) {
           const nextSelections = { ...prev };
           delete nextSelections[sectionId];
@@ -76,7 +73,6 @@ const App: React.FC = () => {
     }
     setError(null);
     setShowResults(true);
-    // Scroll suave a los resultados
     setTimeout(() => {
       const resultsEl = document.getElementById('results-area');
       resultsEl?.scrollIntoView({ behavior: 'smooth' });
