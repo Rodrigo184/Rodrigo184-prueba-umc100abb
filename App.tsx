@@ -160,22 +160,24 @@ const App: React.FC = () => {
                         key={option.id}
                         onClick={() => handleSelection(section.id, option.id, section.isMultiple)}
                         className={`
-                          relative flex flex-col p-4 rounded-xl border-2 cursor-pointer transition-all h-full
+                          relative flex flex-col p-4 rounded-xl border-2 cursor-pointer transition-all h-full overflow-hidden
                           ${isSelected 
                             ? 'border-blue-500 bg-blue-50 ring-2 ring-blue-500 ring-opacity-20 shadow-sm' 
                             : 'border-slate-100 hover:border-slate-300 bg-white'}
                         `}
                       >
                         <div className="flex justify-between items-start mb-2">
-                          <span className={`text-sm font-bold ${isSelected ? 'text-blue-700' : 'text-slate-700'}`}>
+                          <span className={`text-sm font-bold leading-tight ${isSelected ? 'text-blue-700' : 'text-slate-700'}`}>
                             {option.id}. {option.label}
                           </span>
-                          {isSelected && <CheckCircleIcon className="w-5 h-5 text-blue-600" />}
+                          {isSelected && <CheckCircleIcon className="w-5 h-5 text-blue-600 flex-shrink-0 ml-2" />}
                         </div>
                         {option.orderCode !== 'N/A' && (
-                          <div className="mt-auto pt-2 border-t border-slate-100">
-                             <span className="text-[10px] text-slate-400 font-mono block">STYLE NUMBER:</span>
-                             <span className="text-[11px] font-mono text-slate-600 truncate">{option.orderCode}</span>
+                          <div className="mt-auto pt-2 border-t border-slate-100 w-full">
+                             <span className="text-[10px] text-slate-400 font-mono block uppercase">Style Number:</span>
+                             <span className="text-[11px] font-mono text-slate-600 block break-words leading-relaxed">
+                               {option.orderCode}
+                             </span>
                           </div>
                         )}
                         {isSelected && !section.isMultiple && (
@@ -234,7 +236,7 @@ const App: React.FC = () => {
                             <div className="text-slate-500 text-xs mt-1">{comp.description}</div>
                           </td>
                           <td className="py-5 px-2">
-                            <span className="font-mono text-xs bg-blue-50 text-blue-700 px-3 py-1 rounded border border-blue-100">
+                            <span className="font-mono text-xs bg-blue-50 text-blue-700 px-3 py-1 rounded border border-blue-100 break-all">
                               {comp.orderCode}
                             </span>
                           </td>
@@ -261,7 +263,7 @@ const App: React.FC = () => {
         )}
       </main>
 
-      <footer className="mt-12 text-center text-slate-400 text-sm print:hidden">
+      <footer className="mt-12 text-center text-slate-400 text-sm print:hidden pb-8">
         <p>© {new Date().getFullYear()} Universal Motor Controller Configurator Remygallegos COMPANY</p>
       </footer>
     </div>
